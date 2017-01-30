@@ -131,6 +131,9 @@
 					.fadeTo(settings.duration, 0, $.isFunction(settings.onZoomOut) ? settings.onZoomOut.call(img) : false);
 				}
 
+				// stop all externally, without destroying
+				$(document).on('zoom.stop', stop);
+
 				// Mouse events
 				if (settings.on === 'grab') {
 					$source
